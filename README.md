@@ -36,7 +36,7 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 - ANSI color support
 - Full keyboard support
 - Windows Command Prompt / PowerShell
-- Linux Bash (coming soon)
+- Linux Bash 
 
 ### Task Manager
 
@@ -58,6 +58,7 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 - Restart services
 - Change startup type
 - Search services
+- Compatible with systemd
 
 ### System Information
 
