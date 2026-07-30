@@ -105,7 +105,7 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 
 ## Screenshots
 
-### Dashboard
+### System Info
 
 ![Dashboard](screenshots/1.png)
 
@@ -113,7 +113,7 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 
 ![Console](screenshots/2.png)
 
-### Services
+### Task Manager
 
 ![Services](screenshots/3.png)
 
