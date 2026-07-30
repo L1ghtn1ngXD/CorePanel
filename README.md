@@ -105,7 +105,17 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 
 ## Screenshots
 
-Coming soon.
+### Dashboard
+
+![Dashboard](screenshots/1.png)
+
+### Console
+
+![Console](screenshots/2.png)
+
+### Services
+
+![Services](screenshots/3.png)
 
 ---
 
