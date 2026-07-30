@@ -6,13 +6,18 @@ CorePanel is an open-source web control panel designed for managing Windows and 
 
 The goal of CorePanel is to provide a clean, fast and modern interface for system administration without requiring Remote Desktop, VNC or SSH for everyday tasks.
 
-# ⚠️ Warning
-
-Don't abuse CorePanel as a RAT (Remote Access Trojan).
-
-CorePanel is made **ONLY** for managing your own servers or systems that you have permission to administer.
-
-Any unauthorized or malicious use is the responsibility of the user.
+> [!WARNING]
+> ## Responsible Use
+>
+> CorePanel is designed **ONLY** for legitimate server administration.
+>
+> Do **NOT** use CorePanel as a RAT (Remote Access Trojan), spyware,
+> malware, or for unauthorized access to computers.
+>
+> Install CorePanel **only** on systems that you own or have explicit
+> permission to administer.
+>
+> Any misuse of this software is the sole responsibility of the user.
 
 ---
 
