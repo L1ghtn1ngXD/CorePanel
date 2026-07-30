@@ -99,7 +99,7 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 | Debian | 🚧 In Development |
 | Ubuntu | 🚧 Planned |
 | Arch Linux | 🚧 Planned |
-| FreeBSD | ❌ Maybe will be not |
+| FreeBSD | ❌ Not Planned |
 
 ---
 
