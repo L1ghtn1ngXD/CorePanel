@@ -170,6 +170,11 @@ http://localhost:3000
 
 ---
 
+## Documentation
+
+To learn this project, you can read
+![Documentation](DOCUMENTATION.md)
+
 ## License
 
 This project is currently not licensed.
