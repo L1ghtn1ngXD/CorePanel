@@ -1,0 +1,141 @@
+:root {
+    --background: rgb(20, 20, 20);
+    --surface: rgb(28, 28, 28);
+    --surface-hover: rgb(34, 34, 34);
+    --border: rgb(55, 55, 55);
+    --border-focus: rgb(125, 125, 125);
+    --text: rgb(245, 245, 245);
+    --text-secondary: rgb(160, 160, 160);
+    --error: rgb(235, 105, 105);
+    --success: rgb(120, 205, 145);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.brand {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.form-title {
+    margin: 18px 0 34px;
+    color: var(--text-secondary);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    background: var(--surface);
+    color: var(--text);
+    transition:
+        border-color 120ms ease,
+        background-color 120ms ease;
+}
+
+.input-group input:hover {
+    background: var(--surface-hover);
+}
+
+.input-group input:focus {
+    border-color: var(--border-focus);
+    background: var(--surface-hover);
+}
+
+.auth-form button {
+    height: 46px;
+    margin-top: 4px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: rgb(38, 38, 38);
+    color: var(--text);
+    cursor: pointer;
+    transition:
+        background-color 120ms ease,
+        border-color 120ms ease;
+}
+
+.auth-form button:hover {
+    border-color: rgb(85, 85, 85);
+    background: rgb(47, 47, 47);
+}
+
+.auth-form button:active {
+    background: rgb(32, 32, 32);
+}
+
+.auth-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.message {
+    min-height: 20px;
+    margin: -4px 0 -4px;
+    color: var(--error);
+    font-size: 14px;
+    text-align: center;
+}
+
+.message.success {
+    color: var(--success);
+}

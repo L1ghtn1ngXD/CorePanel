@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CorePanel</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/panel.css"
+    >
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/task-manager.css">
+    <link rel="stylesheet" href="/css/files.css">
+</head>
+<body>
+    <div class="application">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>CorePanel</h1>
+            </div>
+
+            <nav class="navigation">
+                <button
+                    class="navigation-button active"
+                    data-page="welcome"
+                    type="button"
+                >
+                    Welcome
+                </button>
+
+                <button
+                    class="navigation-button"
+                    data-page="console"
+                    type="button"
+                >
+                    Console
+                </button>
+
+                <button
+                    class="navigation-button"
+                    data-page="qemu"
+                    type="button"
+                >
+                    QEMU
+                </button>
+
+                <button
+                    class="navigation-button"
+                    data-page="task-manager"
+                    type="button"
+                >
+                    Task Manager
+                </button>
+
+                <button
+                    class="navigation-button"
+                    data-page="system-info"
+                    type="button"
+                >
+                    System Info
+                </button>
+            </nav>
+
+            <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+            >
+                Logout
+            </button>
+        </aside>
+
+        <main class="content">
+            <section
+                class="page active"
+                data-page-content="welcome"
+            >
+                <p class="page-eyebrow">
+                    Overview
+                </p>
+
+                <h2 id="welcome-title">
+                    Welcome
+                </h2>
+
+                <p class="page-description">
+                    CorePanel is ready to manage this system.
+                </p>
+
+                <div class="welcome-grid">
+                    <article class="information-card">
+                        <span class="information-label">
+                            Current user
+                        </span>
+
+                        <strong id="current-user">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="information-card">
+                        <span class="information-label">
+                            Platform
+                        </span>
+
+                        <strong id="current-platform">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="information-card">
+                        <span class="information-label">
+                            Panel status
+                        </span>
+
+                        <strong>
+                            Running
+                        </strong>
+                    </article>
+                </div>
+            </section>
+
+            <section
+                class="page"
+                data-page-content="console"
+            >
+                <p class="page-eyebrow">
+                    Terminal
+                </p>
+
+                <h2>
+                    Console
+                </h2>
+
+                <div class="placeholder">
+                    Terminal sessions will appear here.
+                </div>
+            </section>
+
+            <section
+                class="page"
+                data-page-content="qemu"
+            >
+                <p class="page-eyebrow">
+                    Virtualization
+                </p>
+
+                <h2>
+                    QEMU
+                </h2>
+
+                <div class="placeholder">
+                    Virtual machines managed through virsh will appear here.
+                </div>
+            </section>
+
+            <section
+                class="page"
+                data-page-content="task-manager"
+            >
+                <p class="page-eyebrow">
+                    Processes
+                </p>
+
+                <h2>
+                    Task Manager
+                </h2>
+
+                <div class="placeholder">
+                    Running processes will appear here.
+                </div>
+            </section>
+
+            <section
+                class="page"
+                data-page-content="system-info"
+            >
+                <p class="page-eyebrow">
+                    Hardware and operating system
+                </p>
+
+                <h2>
+                    System Info
+                </h2>
+
+                <div class="usage-grid">
+                    <article class="usage-card">
+                        <div
+                            id="cpu-ring"
+                            class="usage-ring"
+                        >
+                            <div class="usage-ring-content">
+                                <span class="usage-name">
+                                    CPU
+                                </span>
+
+                                <strong id="cpu-usage">
+                                    0%
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="usage-details">
+                            <span>
+                                Processor usage
+                            </span>
+
+                            <strong id="cpu-model">
+                                Loading
+                            </strong>
+                        </div>
+                    </article>
+
+                    <article class="usage-card">
+                        <div
+                            id="ram-ring"
+                            class="usage-ring"
+                        >
+                            <div class="usage-ring-content">
+                                <span class="usage-name">
+                                    RAM
+                                </span>
+
+                                <strong id="ram-usage">
+                                    0%
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="usage-details">
+                            <span id="ram-values">
+                                Loading
+                            </span>
+
+                            <strong>
+                                Physical memory
+                            </strong>
+                        </div>
+                    </article>
+
+                    <article class="usage-card">
+                        <div
+                            id="disk-ring"
+                            class="usage-ring"
+                        >
+                            <div class="usage-ring-content">
+                                <span class="usage-name">
+                                    Disk
+                                </span>
+
+                                <strong id="disk-usage">
+                                    0%
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="usage-details">
+                            <span id="disk-values">
+                                Loading
+                            </span>
+
+                            <strong id="disk-name">
+                                System disk
+                            </strong>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <span>
+                            Download
+                        </span>
+
+                        <strong id="network-download">
+                            0 B/s
+                        </strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>
+                            Upload
+                        </span>
+
+                        <strong id="network-upload">
+                            0 B/s
+                        </strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>
+                            CPU frequency
+                        </span>
+
+                        <strong id="cpu-speed">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>
+                            CPU temperature
+                        </span>
+
+                        <strong id="cpu-temperature">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>
+                            Total processes
+                        </span>
+
+                        <strong id="process-count">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>
+                            Running processes
+                        </span>
+
+                        <strong id="running-processes">
+                            Loading
+                        </strong>
+                    </article>
+                </div>
+
+                <div class="system-information-grid">
+                    <article class="system-information-card">
+                        <span>
+                            Operating system
+                        </span>
+
+                        <strong id="system-os">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Kernel
+                        </span>
+
+                        <strong id="system-kernel">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Architecture
+                        </span>
+
+                        <strong id="system-architecture">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Hostname
+                        </span>
+
+                        <strong id="system-hostname">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Physical cores
+                        </span>
+
+                        <strong id="physical-cores">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Logical processors
+                        </span>
+
+                        <strong id="system-cores">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            System uptime
+                        </span>
+
+                        <strong id="system-uptime">
+                            Loading
+                        </strong>
+                    </article>
+
+                    <article class="system-information-card">
+                        <span>
+                            Disk mount
+                        </span>
+
+                        <strong id="disk-mount">
+                            Loading
+                        </strong>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/js/screen.js"></script>
+    <script src="/js/files.js"></script>    
+    <script src="/js/task-manager.js"></script>
+    <script src="/js/services.js"></script>
+    <script src="/js/panel.js"></script>
+</body>
+</html>

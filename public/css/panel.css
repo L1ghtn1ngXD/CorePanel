@@ -1,0 +1,419 @@
+:root {
+    --background: rgb(20, 20, 20);
+    --sidebar: rgb(25, 25, 25);
+    --surface: rgb(30, 30, 30);
+    --surface-hover: rgb(37, 37, 37);
+    --surface-active: rgb(44, 44, 44);
+    --border: rgb(48, 48, 48);
+    --text: rgb(245, 245, 245);
+    --text-secondary: rgb(155, 155, 155);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+}
+
+button {
+    font: inherit;
+}
+
+.application {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-right: 1px solid var(--border);
+    background: var(--sidebar);
+}
+
+.sidebar-header {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 12px;
+}
+
+.navigation-button,
+.logout-button {
+    width: 100%;
+    min-height: 42px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--text-secondary);
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background-color 120ms ease,
+        color 120ms ease;
+}
+
+.navigation-button:hover,
+.logout-button:hover {
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
+.navigation-button.active {
+    background: var(--surface-active);
+    color: var(--text);
+}
+
+.logout-button {
+    width: auto;
+    margin: auto 12px 16px;
+}
+
+.content {
+    min-width: 0;
+    height: 100vh;
+    overflow: auto;
+    background: var(--background);
+}
+
+.page {
+    display: none;
+    min-height: 100%;
+    padding: 48px;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-eyebrow {
+    margin: 0 0 8px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+
+.page-description {
+    max-width: 660px;
+    margin: 12px 0 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 38px;
+}
+
+.information-card,
+.metric-card,
+.system-information-card,
+.usage-card,
+.placeholder {
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.information-card {
+    min-height: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.information-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.information-card strong {
+    overflow: hidden;
+    font-size: 22px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.placeholder {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 34px;
+    padding: 30px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.system-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 3px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: rgb(225, 225, 225);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+.system-status div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.system-status strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.system-status span:not(.status-indicator) {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 36px;
+}
+
+.usage-card {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    padding: 28px;
+}
+
+.usage-ring {
+    --usage: 0deg;
+
+    position: relative;
+    width: 150px;
+    height: 150px;
+    flex: 0 0 150px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            rgb(235, 235, 235) 0deg,
+            rgb(235, 235, 235) var(--usage),
+            rgb(48, 48, 48) var(--usage),
+            rgb(48, 48, 48) 360deg
+        );
+}
+
+.usage-ring::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border-radius: 50%;
+    background: var(--surface);
+}
+
+.usage-ring-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usage-name {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.usage-ring-content strong {
+    margin-top: 2px;
+    font-size: 31px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.usage-details {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.usage-details span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.usage-details strong {
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.metric-card {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 17px;
+}
+
+.metric-card span,
+.system-information-card span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.metric-card strong {
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.system-information-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.system-information-card {
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 17px;
+}
+
+.system-information-card strong {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 1400px) {
+    .usage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .system-information-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1000px) {
+    .usage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .system-information-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .application {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        padding: 32px;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .usage-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .metric-grid,
+    .system-information-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .system-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
