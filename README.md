@@ -95,10 +95,10 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 |----------|--------|
 | Windows 10 | ✅ Supported |
 | Windows 11 | ✅ Supported |
-| Windows Server | ✅ Planned |
-| Debian | 🚧 In Development |
-| Ubuntu | 🚧 Planned |
-| Arch Linux | 🚧 Planned |
+| Windows Server | ✅ Supported |
+| Debian | ✅ Supported |
+| Ubuntu | ✅ Supported |
+| Arch Linux | ✅ Maybe work |
 | FreeBSD | ❌ Not Planned |
 
 ---
