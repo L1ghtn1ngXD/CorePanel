@@ -125,9 +125,9 @@ The goal of CorePanel is to provide a clean, fast and modern interface for syste
 - [x] Terminal
 - [x] System Information
 - [x] Task Manager
-- [ ] Services
-- [ ] File Manager
-- [ ] QEMU Manager
+- [x] Services
+- [x] File Manager
+- [x] QEMU Manager
 - [ ] Users
 - [ ] Network Manager
 - [ ] Firewall
