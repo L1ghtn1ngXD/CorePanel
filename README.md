@@ -177,7 +177,7 @@ To learn this project, you can read
 
 ## License
 
-This project is currently not licensed.
+This project is currently licensed under the [MIT License](LICENSE.md).
 
 ---
 
